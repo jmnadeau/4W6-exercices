@@ -1,0 +1,16 @@
+{
+  "name": "exemple",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "author": "Jean-Michel Nadeau",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
