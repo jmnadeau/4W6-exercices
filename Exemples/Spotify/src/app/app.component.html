@@ -1,0 +1,20 @@
+<button (click)="connect()">Connexion</button>
+<div>Token : {{spotifyToken}}</div>
+<br />
+<input type="text" name="artiste" placeholder="Artiste" [(ngModel)]="artistname" />
+<br />
+<button (click)="getArtist()">Trouver l'artiste</button>
+<div>Artiste id : {{artist.id}}</div>
+<div>Nom : {{artist.name}}</div>
+<div>Image : <img [src]="artist.image"></div>
+<br />
+<button (click)="getAlbums()">Trouver les albums de l'artiste</button>
+<div *ngFor="let album of albums">
+  <div>Nom : {{album.name}}</div>
+  <div>Image : <img [src]="album.image"></div>
+  <button (click)="getSongs(album)">Trouver les chansons de l'album</button>
+  <div *ngFor="let song of album.songs; let i=index">
+    <div>{{i+1 + " - " + song.name}}</div>
+  </div>
+</div>
+<br />

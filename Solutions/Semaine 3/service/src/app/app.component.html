@@ -1,0 +1,29 @@
+<nav class="navbar navbar-dark bg-dark">
+  <span class="navbar-brand mb-0 h1">{{title}}</span>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-3" style="height: 400px; background-color: rgb(86, 51, 133); padding: 10px;">
+      <form (ngSubmit)="addArtist()">
+        <div class="form-group">
+          <input type="email" class="form-control" name="artistname" placeholder="Nouvel Artiste" [(ngModel)]="artistName">
+        </div>
+        <p>{{artistName}}</p>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </form>
+    </div>
+
+    <div class="col-9" style="display: flex; flex-wrap: wrap; height: 400px; background-color: rgb(51, 73, 133);">
+
+      <div class="card col-2" style="margin: 10px; height: 120px;" *ngFor="let artist of artists">
+        <div class="card-body">
+          {{artist.name}}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
