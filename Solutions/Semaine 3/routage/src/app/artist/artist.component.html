@@ -1,0 +1,23 @@
+<div class="about" id="artistes">
+    <div class="container">
+
+        <h1>Artistes</h1>
+        <div class="heading-underline">
+            <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+        </div>
+
+        <div class="service-grids">
+            <div class="col-md-4 col-sm-4 service-grid service-grid-1"
+                 *ngFor="let artist of artists">
+                <a href="#bio" [routerLink]="['/bio', artist.name]">
+                    <div style="width: 100%; height: 100%; background-size: cover;" [ngStyle]="{'background-image': 'url(' + artist.image + ')'}">
+                        <div class="suggestion-overlay">
+                            <h4>{{artist.name}}</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
