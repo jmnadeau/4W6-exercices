@@ -11,9 +11,9 @@ export class HttpService {
   constructor(public http: HttpClient) { }
 
   async loadArtist(artistName : string): Promise<Artist> {
-    let URL='http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&api_key=9a8a3facebbccaf363bb9fd68fa37abf&format=json&artist=' + artistName;
+    let URL='http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&api_key=API_KEY&format=json&artist=';
 
-    let result = await lastValueFrom(this.http.get<any>(URL));
+    let result = await lastValueFrom(this.http.get<any>(URL + artistName));
     let artistSequentiel = Artist.parseArtist(result);
 
     // ou
