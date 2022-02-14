@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 
 
 class Artist {
-  id: string;
-  name: string;
-  image: string;
+  id?: string;
+  name?: string;
+  image?: string;
 }
 
 class Album {
@@ -32,15 +32,11 @@ export class AppComponent {
 
   artistname = '';
 
-  spotifyToken: string;
+  spotifyToken?: string;
 
   constructor(public http: HttpClient) {}
 
   connect(): void {
-    let headers = new Headers();
-    headers.append('Authorization', 'Basic ' + btoa(CLIENT_ID + ':' + CLIENT_SECRET));
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
     let body = new HttpParams()
       .set('grant_type', 'client_credentials');
 
@@ -87,7 +83,7 @@ export class AppComponent {
       .subscribe(response => {
         this.albums = [];
         console.log(response);
-        response.items.forEach(album => {
+        response.items.forEach((album:any) => {
           this.albums.push(new Album(album.id, album.name, album.images[0].url));
         });
       });
@@ -105,13 +101,9 @@ export class AppComponent {
       .subscribe(response => {
         album.songs = [];
         console.log(response);
-        response.tracks.items.forEach(track => {
+        response.tracks.items.forEach((track:any) => {
           album.songs.push(new Song(track.id, track.name));
         });
-
-        album.songs.push()
-        // tracks.items[0].id
-        // tracks.items[0].name
 
       });
   }
