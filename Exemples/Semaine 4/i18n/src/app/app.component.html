@@ -1,0 +1,10 @@
+<div>
+  <!-- translation: translation pipe -->
+  <h1>{{ 'app.title' | translate }}</h1>
+
+  <!-- translation: directive (key as attribute)-->
+  <p [translate]="'app.text'"></p>
+
+  <!-- translation: directive (key as content of element) -->
+  <button translate (click)="changeLanguage()">app.button</button>
+</div>
