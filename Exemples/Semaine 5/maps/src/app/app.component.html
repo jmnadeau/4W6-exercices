@@ -1,0 +1,24 @@
+<h1>1 - Map simple</h1>
+<google-map
+  [center]="center"
+  [zoom]="zoom"
+  width="700"
+  height="300">
+</google-map>
+
+<h1>2 - Map avec markers</h1>
+<google-map
+  [center]="center"
+  [zoom]="zoom">
+  <map-marker *ngFor="let marker of markerPositions"
+    [position]="marker">
+  </map-marker>
+</google-map>
+
+<h1>3 - Map avec niveau de zoom et centre automatique</h1>
+<!-- Le #googlemaps est utilisé dans le ViewChild -->
+<google-map #googlemaps>
+  <map-marker *ngFor="let marker of markerPositions"
+    [position]="marker">
+  </map-marker>
+</google-map>
