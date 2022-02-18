@@ -1,0 +1,10 @@
+<mat-toolbar>
+  {{artist_name}}
+</mat-toolbar>
+
+<div style="display: flex; flex-wrap: wrap; margin: 20px;">
+  <mat-card class="artist-card" *ngFor="let album of albums">
+    <img mat-card-image src="{{album.image}}">
+    <mat-card-content><p>{{album.name}}</p></mat-card-content>
+  </mat-card>
+</div>

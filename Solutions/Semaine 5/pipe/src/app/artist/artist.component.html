@@ -1,0 +1,16 @@
+<mat-toolbar>
+  {{artist_name}}
+</mat-toolbar>
+
+<div style="display: flex; flex-wrap: wrap; margin: 20px;">
+  <mat-card class="artist-card" *ngFor="let album of albums; let i = index;">
+
+    <!-- Toutes les images paires auront un placeholder de chat -->
+    <img *ngIf="i % 2 === 0" mat-card-image [src]="album.image | placeholder:'chat'">
+
+    <!-- Toutes les images impaires auront un placeholder d'oiseau -->
+    <img *ngIf="i % 2 === 1"  mat-card-image [src]="album.image | placeholder">
+
+    <mat-card-content><p>{{album.name}}</p></mat-card-content>
+  </mat-card>
+</div>
