@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <mat-icon style="margin-right: 8px">album</mat-icon><span>Super Musique Infinie</span>
+</mat-toolbar>
+
+<mat-card style="max-width: 300px; margin: 20px;">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nouvel artiste</mat-label>
+    <input matInput placeholder="Ex. Parcels" value="">
+  </mat-form-field>
+  <button mat-raised-button color="primary">Ajouter</button>
+</mat-card>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-evenly; margin: 20px;">
+  <mat-card style="max-width: 400px; margin-bottom: 20px;" *ngFor="let artist of artists">
+    <mat-card-header>
+      <mat-card-title>{{artist.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="artist.image">
+  </mat-card>
+</div>

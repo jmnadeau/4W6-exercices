@@ -1,0 +1,16 @@
+<!--<mat-toolbar>-->
+  <!--<mat-icon style="margin-right: 8px">album</mat-icon--><span>Super Musique Infinie</span>
+<!--</mat-toolbar>-->
+
+<div style="max-width: 300px; margin: 20px;">
+  <input placeholder="Nouvel artiste" value="">
+  <button color="primary">Ajouter</button>
+</div>
+
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-evenly; margin: 20px;">
+  <div style="max-width: 400px;" *ngFor="let artist of artists">
+    {{artist.name}}
+    <img [src]="artist.image">
+  </div>
+</div>
